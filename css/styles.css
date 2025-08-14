@@ -1,0 +1,288 @@
+:root {
+  --primary: "Climate Crisis", sans-serif;
+  --secondary: "Special Elite", sans-serif;
+  --gap: 1rem;
+  --headings: #6a6a6a;
+  --footer: white;
+  --bold: 700;
+  --semi-bold: 700;
+}
+
+/* Base */
+body {
+  background-color: azure;
+  padding-top: 6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* Typography */
+
+h1 {
+  font-family: var(--primary);
+  font-size: 2rem;
+  font-weight: var(--bold);
+  line-height: 1.5;
+  color: var(--headings);
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h2,
+li,
+a {
+  font-family: var(--secondary), sans-serif;
+  font-weight: var(--bold);
+  line-height: 1.5;
+  color: var(--headings);
+}
+
+li:hover {
+  color: var(--purple);
+}
+
+/* Header */
+.site-header {
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header div.flex {
+  align-items: center;
+}
+
+.site-header__logo img {
+  width: 5rem;
+  min-width: 5rem;
+  max-width: none;
+}
+
+.site-header__menu {
+  flex-grow: 1;
+}
+
+.site-header__menu ul {
+  justify-content: end;
+  list-style: none;
+}
+.site-header__menu li {
+  animation: fadeInRight 3s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+li:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+li:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+li:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+li:nth-of-type(4) {
+  animation-delay: 1s;
+}
+
+.site-header__menu a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: var(--bold);
+}
+
+/* Footer */
+
+.site-footer {
+  background-color: var(--footer);
+  padding: 1rem 0;
+}
+.site-footer__logo img {
+  width: 5rem;
+  min-width: 5rem;
+}
+
+.site-footer__logo {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.site-footer__logo img {
+  width: 4rem;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer__content {
+  grid-column: auto / span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Home Banner */
+.home-banner {
+  aspect-ratio: 16 / 9;
+  background: azure url("../images/hero.jpg") no-repeat scroll center;
+  background-size: cover;
+  position: relative;
+  margin-top: 0;
+}
+
+.home-banner__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.home-banner__text {
+  grid-column: auto / span 12;
+  padding: 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.home-banner__text h1 {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* Base */
+  section {
+    margin: 5.5rem 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  /* Header */
+  .site-header__logo img {
+    width: 4rem;
+  }
+
+  /* Banner */
+  .home-banner {
+    aspect-ratio: 3/2;
+  }
+
+  .home-banner__text {
+    grid-column: 2 / span 6;
+    padding: 2rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 2rem 0;
+  }
+
+  .site-footer .flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-footer__logo {
+    flex-basis: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* Base */
+
+  /* Typography */
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+  /* Header */
+  .site-header__logo img {
+    width: 5rem;
+  }
+
+  .site-header__menu ul {
+    column-gap: 2rem;
+  }
+
+  .site-header__menu a {
+    font-size: 1.25rem;
+  }
+
+  /* Footer */
+  .site-footer__logo img {
+    width: 6rem;
+  }
+
+  /* Banner */
+  .home-banner {
+    aspect-ratio: 16/9;
+    max-height: 65vh;
+    width: 100%;
+  }
+
+  .home-banner__text {
+    grid-column: 4 / span 6;
+    text-align: center;
+  }
+
+  .home-banner__text p {
+    max-width: 100%;
+  }
+}
+
+/* Animation keyframes */
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
