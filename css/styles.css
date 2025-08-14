@@ -3,6 +3,7 @@
   --secondary: "Special Elite", sans-serif;
   --gap: 1rem;
   --headings: #6a6a6a;
+  --hover: black;
   --footer: white;
   --bold: 700;
   --semi-bold: 700;
@@ -64,10 +65,15 @@ a {
   font-weight: var(--bold);
   line-height: 1.5;
   color: var(--headings);
+  text-decoration: none;
+}
+
+p {
+  font-family: var(--secondary), sans-serif;
 }
 
 li:hover {
-  color: var(--purple);
+  color: var(--hover);
 }
 
 /* Header */
@@ -123,6 +129,32 @@ li:nth-of-type(4) {
   text-decoration: none;
   color: var(--blue);
   font-weight: var(--bold);
+}
+
+/* Home Intro */
+.home-intro__image,
+.home-intro__content {
+  grid-column: auto / span 12;
+  height: 100%;
+}
+
+.home-intro__content {
+  text-align: center;
+}
+
+.home-banner__content p {
+  max-width: 420px;
+}
+
+.home-intro__image img {
+  width: 30rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-intro__content h2,
+.home-intro__content p {
+  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -229,7 +261,6 @@ li:nth-of-type(4) {
 }
 
 @media screen and (min-width: 1200px) {
-  /* Base */
 
   /* Typography */
   h1 {
